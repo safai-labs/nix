@@ -52,7 +52,7 @@ feature! {
 /// Newtype pattern around `uid_t` (which is just alias). It prevents bugs caused by accidentally
 /// passing wrong value.
 #[derive(Debug, Copy, Clone, Eq, PartialEq, Hash)]
-pub struct Uid(uid_t);
+pub struct Uid(pub uid_t);
 
 impl Uid {
     /// Creates `Uid` from raw `uid_t`.
@@ -109,7 +109,7 @@ pub const ROOT: Uid = Uid(0);
 /// Newtype pattern around `gid_t` (which is just alias). It prevents bugs caused by accidentally
 /// passing wrong value.
 #[derive(Debug, Copy, Clone, Eq, PartialEq, Hash)]
-pub struct Gid(gid_t);
+pub struct Gid(pub gid_t);
 
 impl Gid {
     /// Creates `Gid` from raw `gid_t`.
