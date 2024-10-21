@@ -161,7 +161,7 @@ feature! {
 /// Newtype pattern around `pid_t` (which is just alias). It prevents bugs caused by accidentally
 /// passing wrong value.
 #[derive(Debug, Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Hash)]
-pub struct Pid(pid_t);
+pub struct Pid(pub pid_t);
 
 impl Pid {
     /// Creates `Pid` from raw `pid_t`.
